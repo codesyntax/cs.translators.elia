@@ -11,7 +11,7 @@ import urllib.request
 def _cache_key_translate_content(fun, self, content, source_language, target_language):
     content_hash = hashlib.sha512(safe_bytes(content))
     time_period = time.time() // 3600
-    return f"elia-translate-{source_language}-{target_language}-{content_hash.hexdigest()}-{time_period!s}"
+    return f"elia-translate-{source_language}-{target_language}-{content_hash.hexdigest()}-{time_period!s}"  # noqa: E501
 
 
 class ELIATranslationServiceFactory:
@@ -86,14 +86,14 @@ class ELIATranslationServiceFactory:
         # Merge HEADERS and ensure Content-Type is set to application/json
         headers = {"Content-Type": "application/json", "Accept": "application/json"}
 
-        req = urllib.request.Request(
+        req = urllib.request.Request(  # noqa: S310
             url,
             data=payload,
             headers=headers,
             method="POST",
         )
 
-        result = urllib.request.urlopen(req, timeout=timeout)
+        result = urllib.request.urlopen(req, timeout=timeout)  # noqa: S310
         data = json.loads(result.read().decode("utf-8"))
 
         translated_text = data.get("translated_text", "")
