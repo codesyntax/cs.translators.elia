@@ -1,13 +1,13 @@
-
 from cs.translators.elia import _
 from cs.translators.elia.interfaces import IBrowserLayer
 from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
 from plone.app.registry.browser.controlpanel import RegistryEditForm
 from plone.restapi.controlpanels import RegistryConfigletPanel
 from plone.z3cform import layout
+from zope import schema
 from zope.component import adapter
 from zope.interface import Interface
-from zope import schema
+
 
 class IELIAControlPanel(Interface):
     api_base_url = schema.TextLine(
@@ -113,10 +113,7 @@ class ELIAControlPanel(RegistryEditForm):
     label = _("ELIA Control Panel")
 
 
-ELIAControlPanelView = layout.wrap_form(
-    ELIAControlPanel, ControlPanelFormWrapper
-)
-
+ELIAControlPanelView = layout.wrap_form(ELIAControlPanel, ControlPanelFormWrapper)
 
 
 @adapter(Interface, IBrowserLayer)

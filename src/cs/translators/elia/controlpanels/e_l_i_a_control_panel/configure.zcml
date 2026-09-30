@@ -3,20 +3,22 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:plone="http://namespaces.plone.org/plone"
-    i18n_domain="cs.translators.elia">
+    i18n_domain="cs.translators.elia"
+    >
 
   <browser:page
-    name="e_l_i_a_control_panel-controlpanel"
-    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-    class=".controlpanel.ELIAControlPanelView"
-    layer="cs.translators.elia.interfaces.IBrowserLayer"
-    permission="cmf.ManagePortal"
-    />
+      name="e_l_i_a_control_panel-controlpanel"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".controlpanel.ELIAControlPanelView"
+      permission="cmf.ManagePortal"
+      layer="cs.translators.elia.interfaces.IBrowserLayer"
+      />
 
-  <include package="plone.restapi"  />
+  <include package="plone.restapi" />
   <adapter
-    factory=".controlpanel.ELIAControlPanelConfigletPanel"
-    name="e_l_i_a_control_panel" />
+      factory=".controlpanel.ELIAControlPanelConfigletPanel"
+      name="e_l_i_a_control_panel"
+      />
 
 
 </configure>

@@ -5,16 +5,16 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
-  <configlet
-      i18n:attributes="title"
-      title="E L I A Control Panel"
-      action_id="e_l_i_a_control_panel-controlpanel"
-      appId="e_l_i_a_control_panel-controlpanel"
-      category="Products"
-      condition_expr=""
-      icon_expr=""
-      url_expr="string:${portal_url}/@@e_l_i_a_control_panel-controlpanel"
-      visible="True">
+  <configlet action_id="e_l_i_a_control_panel-controlpanel"
+             appId="e_l_i_a_control_panel-controlpanel"
+             category="Products"
+             condition_expr=""
+             icon_expr=""
+             title="E L I A Control Panel"
+             url_expr="string:${portal_url}/@@e_l_i_a_control_panel-controlpanel"
+             visible="True"
+             i18n:attributes="title"
+  >
     <permission>Manage Portal</permission>
   </configlet>
 

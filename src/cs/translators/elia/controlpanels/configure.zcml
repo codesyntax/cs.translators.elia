@@ -7,9 +7,7 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
-    <include
-        package=".e_l_i_a_control_panel"
-    />
+  <include package=".e_l_i_a_control_panel" />
 
 
 </configure>
