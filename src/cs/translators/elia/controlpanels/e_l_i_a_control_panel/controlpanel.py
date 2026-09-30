@@ -44,6 +44,7 @@ class IELIAControlPanel(Interface):
         required=False,
         readonly=False,
     )
+
     api_key = schema.TextLine(
         title=_(
             "The API key provided by Elhuyar",
@@ -56,31 +57,44 @@ class IELIAControlPanel(Interface):
         readonly=False,
     )
 
-    translatabel_css_selector = schema.TextLine(
-        title=_(
-            "The css selector to choose the content to translate",
-        ),
+    enabled = schema.Bool(
+        title=_("Enabled"),
         description=_(
-            "",
+            "If enabled this service will be enabled used to get the translations."
         ),
-        default="body",
         required=False,
-        readonly=False,
+        default=True,
     )
 
-    language_pairs_to = schema.List(
-        title=_(
-            "Languages to give as translatable",
-        ),
+    order = schema.Int(
+        title=_("Order"),
         description=_(
-            "",
+            "Ordering of this service. The lower the sooner this service will be used."
         ),
-        value_type=schema.TextLine(
-            title="",
-        ),
-        default=[],
+        default=30,
+        required=True,
+    )
+
+    source_languages = schema.List(
+        title=_("Source languages"),
+        description=_("Select which source languages does this service allow"),
         required=False,
-        readonly=False,
+        default=[],
+        missing_value=[],
+        value_type=schema.Choice(
+            vocabulary="plone.app.vocabularies.AvailableContentLanguages"
+        ),
+    )
+
+    target_languages = schema.List(
+        title=_("Target languages"),
+        description=_("Select which target languages does this service allow"),
+        required=False,
+        default=[],
+        missing_value=[],
+        value_type=schema.Choice(
+            vocabulary="plone.app.vocabularies.AvailableContentLanguages"
+        ),
     )
 
     timeout = schema.Int(
