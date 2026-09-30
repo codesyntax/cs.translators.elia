@@ -1,0 +1,14 @@
+{
+    "title": "cs.translators.elia",
+    "description": "An add-on providing translation service for Plone",
+    "author": "CodeSyntax",
+    "email": "plone@codesyntax.com",
+    "github_organization": "codesyntax",
+    "use_prerelease_versions": "No",
+    "plone_version": "6.2.2",
+    "python_package_name": "cs.translators.elia",
+    "feature_headless": false,
+    "initialize_ci": true,
+    "initialize_documentation": true,
+    "__template__": "backend_addon"
+}
