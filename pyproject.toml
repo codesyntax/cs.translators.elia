@@ -4,14 +4,8 @@ dynamic = ["version", "readme"]
 description = "An add-on providing translation service for Plone"
 license = "GPL-2.0-only"
 requires-python = ">=3.10"
-authors = [
-    { name = "CodeSyntax", email = "plone@codesyntax.com" },
-]
-keywords = [
-    "CMS",
-    "Plone",
-    "Python",
-]
+authors = [{ name = "CodeSyntax", email = "plone@codesyntax.com" }]
+keywords = ["CMS", "Plone", "Python"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Environment :: Web Environment",
@@ -26,19 +20,16 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
 ]
-dependencies = [
-    "Products.CMFPlone",
-    "plone.api",
-    
-    "z3c.jbot",
-]
+dependencies = ["Products.CMFPlone", "plone.api", "z3c.jbot"]
 
 [project.optional-dependencies]
 test = [
     "horse-with-no-namespace",
     "plone.app.testing",
-    "plone.classicui","plone.restapi[test]",
+    "plone.classicui",
+    "plone.restapi[test]",
     "pytest",
     "pytest-cov",
     "pytest-plone>=1.0.0a2",
@@ -73,9 +64,7 @@ build-backend = "hatchling.build"
 strict-naming = true
 
 [tool.hatch.build.targets.sdist]
-exclude = [
-  "/.github",
-]
+exclude = ["/.github"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/cs"]
@@ -153,7 +142,8 @@ lint.select = [
     # mccabe
     "C90",
     # pycodestyle
-    "E", "W",
+    "E",
+    "W",
     # pyflakes
     "F",
     # pygrep-hooks
@@ -190,9 +180,7 @@ testpaths = ["tests"]
 source_pkgs = ["cs.translators.elia", "tests"]
 branch = true
 parallel = true
-omit = [
-  "src/cs/translators/elia/locales/*.py",
-]
+omit = ["src/cs/translators/elia/locales/*.py"]
 
 [tool.zest-releaser]
 python-file-with-version = "src/cs/translators/elia/__init__.py"
