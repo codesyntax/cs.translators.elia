@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<registry
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="cs.translators.elia">
+
+<!-- -*- extra stuff goes here -*- -->
+
+  <records interface="cs.translators.elia.controlpanels.e_l_i_a_control_panel.controlpanel.IELIAControlPanel"
+           prefix="cs.translators.elia.e_l_i_a_control_panel" />
+
+
+</registry>
