@@ -2,6 +2,7 @@
     <h1 align="center">cs.translators.elia</h1>
 </div>
 <div align="center">
+
 [![PyPI](https://img.shields.io/pypi/v/cs.translators.elia)](https://pypi.org/project/cs.translators.elia/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/cs.translators.elia)](https://pypi.org/project/cs.translators.elia/)
 [![PyPI - Wheel](https://img.shields.io/pypi/wheel/cs.translators.elia)](https://pypi.org/project/cs.translators.elia/)
@@ -19,11 +20,13 @@
 
 </div>
 
-An add-on providing translation service for Plone
+This package extends [plone.app.multilingual](https://github.com/plone/plone.app.multilingual) with pluggable external translation utilities for automatic content translation in Plone.
 
-## Features
+It integrates the [ELIA Translator](https://elia.eus/traductor) a product by [Elhuyar](https://www.elhuyar.eus/eu)
 
-TODO: List our awesome features
+This add-on requires [plone.app.multilingual PR #468](https://github.com/plone/plone.app.multilingual/pull/468).
+No released version of `plone.app.multilingual` provides the `IExternalTranslationService` interface yet.
+
 
 ## Installation
 
