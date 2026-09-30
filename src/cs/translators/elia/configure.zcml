@@ -12,11 +12,17 @@
       />
 
 
+  <include file="profiles.zcml" />
   <include file="dependencies.zcml" />
-  <include file="permissions.zcml" />
 
   <include package=".controlpanels" />
 
   <!-- -*- extra stuff goes here -*- -->
+  <utility
+      provides="plone.app.multilingual.interfaces.IExternalTranslationService"
+      name="elia"
+      component=".utility.ELIATranslationService"
+      />
+
 
 </configure>
